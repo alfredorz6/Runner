@@ -3,7 +3,7 @@ function animate() {
     ctx1.drawImage(Background_2lv, 0, 0, canvas.width, canvas.height)
     runner.draw();
     runner.update();
-    // handleObstacles();
+    handleObstacles()
     ctx4.drawImage(toplvl, 0, 0, canvas.width, canvas.height)
     requestAnimationFrame(animate)
 }
