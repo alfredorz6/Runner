@@ -1,16 +1,25 @@
 function animate() {
+    ctx1.clearRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0, 0, canvas.width, canvas.height);
     ctx3.clearRect(0, 0, canvas.width, canvas.height);
-    ctx1.drawImage(Background_2lv, 0, 0, canvas.width, canvas.height)
+    ctx4.clearRect(0, 0, canvas.width, canvas.height);
+    ctx5.clearRect(0, 0, canvas.width, canvas.height);
+    handleRipples();
+    ctx2.drawImage(Background_2lv, 0, 0, canvas2.width, canvas2.height)
+    handleParticles()
     runner.draw();
     runner.update();
     handleObstacles()
-    ctx4.drawImage(toplvl, 0, 0, canvas.width, canvas.height)
+    ctx5.drawImage(toplvl, 0, 0, canvas.width, canvas.height)
+    handleScoreBoard()
+    frame++
+    rockFrame += 8
     requestAnimationFrame(animate)
 }
 
 animate();
 
-//even listeners
+// even listeners
 
 window.addEventListener('keydown', function(e){
     keys = [];
@@ -22,7 +31,8 @@ window.addEventListener('keydown', function(e){
 
 window.addEventListener('keyup', function(e){
     delete keys[e.keyCode]
-    runner.moving = false
+    runner.moving = false;
+    runner.frameX = 1;
 })
 
 function scored() {
@@ -30,4 +40,30 @@ function scored() {
     gameSpeed += 0.1
     runner.x = canvas.width/2 - runner.width/2
     runner.y = canvas.height - runner.height - 20;
+}
+
+function handleScoreBoard() {
+    ctx5.fillStyle = 'white';
+    ctx5.strokeStyle = 'white'
+    ctx5.font = '15px Arial';
+    ctx5.strokeText('Score', 365, 15)
+    ctx5.font = '60px Arial';
+    ctx5.fillText(score, 365, 65);
+    ctx5.font = '15px Arial'
+    ctx5.strokeText('Game Speed: ' + gameSpeed.toFixed(1), 45, 195)
+}
+
+//collisin 
+function collision(first, second) {
+    return !(first.x > second.x + second.width ||
+        first.x + first.width < second.x ||
+        first.y > second.y + second.height || 
+        first.y + first.height < second.y);
+}
+
+function resetGame(){
+    runner.x = canvas.width/2 - runner.width/2
+    runner.y = canvas.height - runner.height - 35
+    score = 0
+    gameSpeed = 1
 }
