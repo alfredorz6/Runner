@@ -85,13 +85,18 @@ myPlay.addEventListener('click', function() {
 
 //modal
 var modal = document.getElementById("instruction");
-
-// Get the <span> element that closes the modal
 var btn = document.getElementById("start-game");
 
-// When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "none";
   BGM.play()
 }
 
+// favicon
+var link = document.querySelector("link[rel~='icon']");
+if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+link.href = './../favicon.ico';
