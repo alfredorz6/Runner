@@ -12,6 +12,11 @@ reset to its start position and the speed of obstacles will increase, the target
    - [ ] Obstacle speed should increase every time player gets a point
 - [ ] 4. set up collision detection and score reset on collision
 
+## Aditional features
+- [ ] 1. sounds effect on impact with objects
+- [ ] 2. added status effects on player when hit such as wounded or burned giving it restrictions
+- [ ] 3. add 3 lives as basic stat and a function that after 10 points character gets a crown in its sprite
+
 ## Technologies
 * JavaScript
 * HTML5 Canvas
