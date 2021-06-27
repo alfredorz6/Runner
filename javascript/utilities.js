@@ -55,6 +55,7 @@ function handleScoreBoard() {
     ctx5.font = '15px Arial'
     ctx5.strokeText('Game Speed: ' + gameSpeed.toFixed(1), 45, 195)
     ctx5.strokeText('Lives Remaining: ' + lives.toFixed(1), 45, 207)
+    ctx5.strokeText('Status: ' + status, 45, 222)
 }
 
 //collisin 
@@ -88,7 +89,13 @@ function resetPlayer(){
         runner.y = canvas.height - runner.height - 35
         lives -- 
     }
+
+    if (lives < 0) {
+        lives = 0
+    }
 }
+
+
 
 
 function gameOver(){
