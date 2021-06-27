@@ -23,6 +23,11 @@ const ctx5 = canvas5.getContext('2d');
 canvas5.width = 800;
 canvas5.height = 800;
 
+const canvas6 = document.getElementById('canv6')
+const ctx6 = canvas6.getContext('2d');
+canvas6.width = 800;
+canvas6.height = 800;
+
 //G variables
 const grid = 80
 let keys= [];
@@ -32,6 +37,8 @@ let frame = 0
 let safe = false
 let rockFrame = 0
 let gameSpeed = 1
+let status = 'normal'
+let lives = 3
 
 const particles= []
 const maxParticles = 300
@@ -72,10 +79,17 @@ steps.src = './assets/stepping_stone.png'
 const player = new Image();
 player.src = './assets/sprite.png'
 
+const wall = new Image();
+wall.src = './assets/wall.jpg'
+
+const crown = new Image();
+crown.src = './assets/crown.png'
+
 //audio
 const myPlay = document.getElementById("play");
-let BGM = new Audio();
+const BGM = new Audio();
 BGM.loop = true
+BGM.volume = 0.5
 BGM.autoplay = true
 BGM.src = './assets/BGM/bgm.ogg'
 
@@ -83,6 +97,11 @@ myPlay.addEventListener('click', function() {
     BGM.paused ? BGM.play() : BGM.pause()
 })
 
+const burn = new Audio();
+burn.src = './assets/BGM/lava.flac'
+
+const hurt = new Audio();
+hurt.src = './assets/BGM/deathh.wav'
 //modal
 var modal = document.getElementById("instruction");
 var btn = document.getElementById("start-game");
@@ -100,3 +119,16 @@ if (!link) {
     document.getElementsByTagName('head')[0].appendChild(link);
 }
 link.href = './../favicon.ico';
+
+//gameover modal
+var reset = document.getElementById('restart-game')
+var modal2 = document.getElementById('game-over')
+
+
+reset.onclick = function() {
+  modal2.style.display = "none";
+  resetGame();
+ 
+}
+
+document.querySelector('.score').innerHTML = score;

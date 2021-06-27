@@ -27,6 +27,11 @@
                 <h2>INSTRUCTIONS</h2>
                 
               <img src="./assets/keyboard.png"/>
+              <h3>Status effects</h3>
+              <p>When you are hit by arrows or boulders you get status wounded which</p>
+              <p>reduces move distance by half, when hit by the fire or fall in lava the</p>
+              <p>status burned will be generate which makes you lose 2 lives in next death</p>
+              <p>get a score to clear your current status and get 5 points to gain a new live</p>
               <br/>
               <button class='close-modal' id='start-game'><img src='./assets/play.png'/></button>
               <br/>
@@ -39,6 +44,23 @@
         <canvas id="canv3"></canvas>
         <canvas id="canv4"></canvas>
         <canvas id="canv5"></canvas>
+        <canvas id="canv6"></canvas>
+        <div id="game-over" class="modal2">
+
+        
+            <div class="modal-content2">
+                <h2>YOU LOSE!</h2>
+                
+              
+              <h3>Total Score</h3>
+              <p class='score'></p>
+              <br/>
+              <button class='close-modal' id='restart-game'><img src='./assets/play.png'/></button>
+              <br/>
+              <p>Press to reset, when ready </p>
+            </div>
+          
+        </div>
     </div>
 
     <footer>

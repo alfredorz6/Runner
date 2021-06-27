@@ -109,7 +109,7 @@ h2 {
 }
 
 .close-modal > p {
-    font-size: 18px;
+    font-size: 24px;
 }
   
 footer {
@@ -136,4 +136,29 @@ footer > a {
     width: 100%;
     justify-content: space-around;
 
+}
+
+.modal2 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    overflow: auto;
+    border: 3px solid black;
+    background-color: rgb(0,0,0);
+    
+}
+  
+  /* Modal Content/Box */
+.modal-content2 {
+    text-align: center;
+    background: url('./assets/wall.jpg') ;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    color: whitesmoke
 }

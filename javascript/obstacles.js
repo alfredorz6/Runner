@@ -111,7 +111,9 @@ function handleObstacles(){
     for(let i = 0; i < rocks.length; i++) {
         if (collision(runner, rocks[i])){
             ctx4.drawImage(collisions, runner.x, runner.y, 50, 50)
-            resetGame()
+            hurt.play()
+            resetPlayer()
+            status = 'wounded'
         }
     }
 
@@ -122,7 +124,10 @@ function handleObstacles(){
     for(let i = 0; i < arrows.length; i++) {
         if (collision(runner, arrows[i])){
             ctx4.drawImage(collisions, runner.x, runner.y, 50, 50)
-            resetGame()
+            hurt.play()
+            resetPlayer()
+            status = 'wounded'
+
         }
     }
 
@@ -133,7 +138,9 @@ function handleObstacles(){
     for(let i = 0; i < fire.length; i++) {
         if (collision(runner, fire[i])){
             ctx4.drawImage(flame, runner.x, runner.y, 50, 50)
-            resetGame()
+            burn.play()
+            resetPlayer()
+            status = 'burned'
         }
     }
 
@@ -155,7 +162,9 @@ function handleObstacles(){
             for(let i = 0; i < 30; i++){
                 splash.unshift(new Ripple(runner.x, runner.y))
             }
-            resetGame()
+            burn.play()
+            resetPlayer()
+            status = 'burned'
         }
     }
     
