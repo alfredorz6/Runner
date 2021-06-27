@@ -154,7 +154,7 @@ function handleObstacles(){
         safe = false
         for(let i = 0; i < debris.length; i++) {
             if (collision(runner, debris[i])){
-                runner.x += debris[i].speed;
+                runner.x += (debris[i].speed * gameSpeed);
                 safe = true
             }
         }
