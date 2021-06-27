@@ -72,6 +72,8 @@ function resetGame(){
     gameSpeed = 1
     lives = 3
     status = 'normal'
+    hurt.volume = 1
+    burn.volume = 1
 }
 
 function resetPlayer(){
@@ -90,6 +92,11 @@ function resetPlayer(){
 
 
 function gameOver(){
+    hurt.volume = 0
+    burn.volume = 0
+    let currScore = score
+    document.querySelector('.score').innerHTML = currScore;
     modal2.style.display = "block";
+
 
 }

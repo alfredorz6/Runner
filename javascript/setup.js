@@ -131,4 +131,3 @@ reset.onclick = function() {
  
 }
 
-document.querySelector('.score').innerHTML = score;
