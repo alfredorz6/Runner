@@ -39,6 +39,9 @@ window.addEventListener('keyup', function(e){
 
 function scored() {
     score++;
+    if (score % 5 === 0){
+        lives ++
+    }
     gameSpeed += 0.1
     status = 'normal'
     runner.x = canvas.width/2 - runner.width/2

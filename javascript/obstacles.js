@@ -69,34 +69,34 @@ function initObstacles(){
     //boulders
     for(let i = 0; i < 4; i++){
         let x = i * 225
-        rocks.push(new Obstacle(x, canvas.height - grid * 2 - 20, grid , grid, 1, 'rock'))
+        rocks.push(new Obstacle(x, canvas.height - grid * 2 - 15, grid , grid, 1, 'rock'))
     }
     for(let i = 0; i < 3; i++){
         let x = i * 355
-        rocks.push(new Obstacle(x, canvas.height - grid * 5 - 20, grid , grid, -2, 'rockL'))
+        rocks.push(new Obstacle(x, canvas.height - grid * 5 - 15, grid , grid, -2, 'rockL'))
     }
     // arrowLanes
     for(let i = 0; i < 3; i++){
         let x = i * 300
-        arrows.push(new Obstacle(x, canvas.height - grid * 3 - 20, grid * 2, grid, 1, 'arrow'))
+        arrows.push(new Obstacle(x, canvas.height - grid * 3 - 15, grid * 2, grid, 1, 'arrow'))
     }
     for(let i = 0; i < 3; i++){
         let x = i * 415
-        arrows.push(new Obstacle(x, canvas.height - grid * 4 - 20, grid * 2, grid, -1.3, 'arrowL'))
+        arrows.push(new Obstacle(x, canvas.height - grid * 4 - 15, grid * 2, grid, -1.3, 'arrowL'))
     }
     //fire
     for(let i = 0; i < 2; i++){
         let x = i * 275
-        fire.push(new Obstacle(x, canvas.height - grid * 6 - 20, grid * 5, grid, 8, 'fire'))
+        fire.push(new Obstacle(x, canvas.height - grid * 6 - 15, grid * 5, grid, 8, 'fire'))
     }
     //steps
     for(let i = 0; i < 3; i++){
         let x = i * 350
-        debris.push(new Obstacle(x, canvas.height - grid * 8 - 20, grid, grid, 1.7, 'debris'))
+        debris.push(new Obstacle(x, canvas.height - grid * 8 - 5, grid, grid, 1.7, 'debris'))
     }
     for(let i = 0; i < 3; i++){
         i === 0 ? x = 45 : x = i * 345
-        debris.push(new Obstacle(x, canvas.height - grid * 9 - 20, grid, grid, -0.5, 'debris'))
+        debris.push(new Obstacle(x, canvas.height - grid * 9 - 15, grid, grid, 0, 'debris'))
     }
 
 }
@@ -150,14 +150,14 @@ function handleObstacles(){
         
     }
 
-    if (runner.y < 200 && runner.y > 80 ) {
+    if (runner.y < 200 && runner.y > 70 ) {
         safe = false
         for(let i = 0; i < debris.length; i++) {
             if (collision(runner, debris[i])){
                 runner.x += (debris[i].speed * gameSpeed);
                 safe = true
-            }
-        }
+            } 
+        } 
         if (!safe){
             for(let i = 0; i < 30; i++){
                 splash.unshift(new Ripple(runner.x, runner.y))

@@ -89,7 +89,7 @@ crown.src = './assets/crown.png'
 const myPlay = document.getElementById("play");
 const BGM = new Audio();
 BGM.loop = true
-BGM.volume = 0.5
+BGM.volume = 0.75
 BGM.autoplay = true
 BGM.src = './assets/BGM/bgm.ogg'
 
