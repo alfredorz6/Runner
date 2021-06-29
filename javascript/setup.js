@@ -128,6 +128,7 @@ var modal2 = document.getElementById('game-over')
 reset.onclick = function() {
   modal2.style.display = "none";
   resetGame();
+  modal.style.display = 'block'
  
 }
 
