@@ -85,6 +85,9 @@ wall.src = './assets/wall.jpg'
 const crown = new Image();
 crown.src = './assets/crown.png'
 
+const play = new Image()
+play.src = './assets/resume.png'
+
 //audio
 const myPlay = document.getElementById("play");
 const BGM = new Audio();
@@ -93,7 +96,7 @@ BGM.volume = 0.75
 BGM.autoplay = true
 BGM.src = './assets/BGM/bgm.ogg'
 
-myPlay.addEventListener('click', function() {
+play.addEventListener('click', function() {
     BGM.paused ? BGM.play() : BGM.pause()
 })
 

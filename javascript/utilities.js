@@ -21,7 +21,7 @@ function animate() {
 
 animate();
 
-// even listeners
+// event listeners
 
 window.addEventListener('keydown', function(e){
     keys = [];

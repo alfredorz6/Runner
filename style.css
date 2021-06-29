@@ -31,13 +31,15 @@ body {
 
 header {
     text-align: center;
-    margin: 25px auto;
+    margin: 15%;
+    float: left
 }
 
 header > h1 {
     margin: 0px;
     color: white;
     font-family: 'Amatic SC', cursive;
+    font-size: 54px;
     
 }
 
@@ -45,7 +47,7 @@ header > p {
     margin: 0px; 
     color: white;
     font-family: 'Amatic SC', cursive;
-    
+    font-size: 24px;
 }
 
 .play {
@@ -164,3 +166,13 @@ footer > a {
     color: whitesmoke
 }
 
+.game-body{
+    display: flex;
+}
+
+.music {
+    float: right;
+    margin: 15%;
+    color: white
+    
+}
