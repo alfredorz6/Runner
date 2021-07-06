@@ -96,7 +96,7 @@ BGM.volume = 0.75
 BGM.autoplay = true
 BGM.src = './assets/BGM/bgm.ogg'
 
-play.addEventListener('click', function() {
+myPlay.addEventListener('click', function() {
     BGM.paused ? BGM.play() : BGM.pause()
 })
 
