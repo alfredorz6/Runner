@@ -81,7 +81,7 @@ function resetGame(){
 }
 
 function resetPlayer(){
-    if (lives < 1) {
+    if (lives <= 1) {
         gameOver()
     } else if (status === 'burned'){
         runner.x = canvas.width/2 - runner.width/2
